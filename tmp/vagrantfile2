@@ -1,0 +1,12 @@
+--2019-02-19 19:55:39--  https://github.com/Fale/vagrant/blob/master/etcd/Vagrantfile
+Résolution de github.com (github.com)… 140.82.118.4, 140.82.118.3
+Connexion à github.com (github.com)|140.82.118.4|:443… connecté.
+requête HTTP transmise, en attente de la réponse… 200 OK
+Taille : non indiqué [text/html]
+Sauvegarde en : « Vagrantfile »
+
+     0K .......... .......... .......... .......... .......... 1,70M
+    50K .....                                                  35,1M=0,03s
+
+2019-02-19 19:55:40 (1,89 MB/s) - « Vagrantfile » sauvegardé [57311]
+

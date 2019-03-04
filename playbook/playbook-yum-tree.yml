@@ -1,0 +1,20 @@
+- name: Configure properly tree
+  hosts: etcd0
+  tasks:
+    - name: Ensure that etcd is present
+      yum:
+        name: tree
+        state: present
+      become: True
+
+- name: Check ID
+  hosts: etcd0
+  tasks:
+    - name: check id
+      shell: id
+      become: false
+      register: result
+
+    - name: debug
+      debug:
+        var: result

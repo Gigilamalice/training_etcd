@@ -1,0 +1,14 @@
+---
+- name: test loop
+  hosts: localhost
+  become: false
+  
+  tasks:    
+    - name: "Item = {{ item }}"
+      command: echo "hello"
+      with_items: [ 1,2,3,4,8,9,10 ]
+      when: item > 5
+   
+    - command: echo "hello"
+      with_items: [ 1,2,3,4,8,9,10 ]
+      when: item > 5

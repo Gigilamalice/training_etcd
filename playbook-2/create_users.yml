@@ -1,0 +1,23 @@
+---
+- name: create user accounts for all our servers
+  hosts: dbservers
+  become: True
+  remote_user: vagrant
+  vars_files:
+    - secret.yml
+
+  tasks:
+    - name: show var
+      debug:
+        msg: "{{ username }} and {{ pwhash }}"
+
+    - name: Creating user from secret.yml
+      user:
+        name: "{{ username }}"
+        password: "{{ pwhash }}"
+
+    - name: Creating user from nothings
+      user:
+        name: "titi"
+        password: "$6$rounds=656000$mysecretsalt$OJX2TzrUV87b0zjmWU3kbTtmRwaMauVQcpDjHx9MCEUBeqKsoNinBw26bHsfxBvWqLsVZSw62SVKmVh.JVf5B."
+

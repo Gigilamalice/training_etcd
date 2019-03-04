@@ -1,0 +1,44 @@
+---
+  - name: demo variables
+    hosts: all
+    tasks: 
+      - name: show fact
+        setup:
+          filter:
+        register: output_fact
+
+      - name: debug
+        debug:
+          var: output_fact.ansible_facts.ansible_all_ipv4_addresses
+
+      - name: install paclkage "{{ package }}" package
+        yum:
+          name: "{{ package }}"
+          state: latest
+        register: output
+
+    
+      - name: debug
+        debug:
+          msg: "{{ output.changed }} and {{ output_fact.ansible_facts.ansible_all_ipv4_addresses.0 }}"
+
+
+  - name: show local facts
+    hosts: etcd0
+    tasks:
+      - name: show setup
+        setup: 
+        register: output_fact2
+
+      - name: Prints various Ansible facts
+        debug:
+          msg: "{{ ansible_facts.ansible_local.local.packages.web_package }}"
+
+            
+# - name: show var
+
+
+
+
+
+

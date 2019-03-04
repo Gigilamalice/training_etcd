@@ -1,0 +1,12 @@
+- name: manage etcd
+  hosts: localhost
+  become: true
+  tasks:    
+    - etcd3:
+        key: "message"
+        value: "Hello"
+        host: "localhost"
+        port: 2379
+        state: "present"
+    
+    

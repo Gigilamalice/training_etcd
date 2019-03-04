@@ -1,0 +1,15 @@
+---
+  - name : lineinfile
+    hosts: all
+    tasks:
+      - lineinfile:
+          path: /tmp/testfile
+          line: '192.168.1.99 foo.lab.net foo'
+          create: yes
+          backup: yes
+        
+      - lineinfile:
+          path: /tmp/testfile
+          line: '192.168.1.100 foo2.lab.net foo'
+          create: yes
+          backup: yes

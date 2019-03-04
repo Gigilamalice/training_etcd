@@ -1,0 +1,8 @@
+#  Local .vagrant directories
+**/.vagrant/*
+
+# .vagrant files
+*.vagrant
+
+# files
+
